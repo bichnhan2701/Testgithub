@@ -1,0 +1,497 @@
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: var(--m);
+}
+
+.header-logo {
+    width: 20%;
+}
+
+.header-search-container {
+    position: relative;
+    width: 30%;
+}
+
+.header-search-container .search-field {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border-bottom: var(--item-border);
+    padding: 10px 15px;
+    font-size: var(--item-font-size);
+    margin: var(--m);
+}
+
+.header-search-container .search-btn {
+    position: absolute;
+    top: 13%;
+    right: 5px;
+    padding: 5px;
+    border: none;
+    font-size: 18px;
+    background: none;
+    transition: color 0.2s ease;
+}
+
+.header-search-container .search-btn i {
+    color: var(--item);
+}
+
+.header-search-container:hover .search-btn i {
+    color: var(--item-hover); 
+    transition: color 0.2s ease;
+}
+
+.header-user-actions {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 50%;
+    gap: 20px;
+}
+
+.header-user-actions button {
+    border: none;
+    border-bottom: var(--item-border);
+    padding: 10px;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.header-search-container:hover .search-field,
+.header-user-actions button:hover {
+    border-bottom: var(--item-border2);
+    transition: color 0.2s ease;
+}
+
+.header-user-actions button i {
+    font-size: 20px;
+}
+
+.header-user-actions button:hover i {
+    color: var(--item-hover); 
+    transition: color 0.2s ease;
+}
+
+.header-user-actions .user-out {
+    display: flex;
+    /* display: none; */
+    width: 80%;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-user-actions .user, .user-in > .logout,
+.user-out > .login, .user-out > .register {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-in > .logout,
+.user-out > .login, .user-out > .register {
+    width: 25%;
+}
+
+.header-user-actions .user-in {
+    display: none;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    gap: 20px;
+}
+
+.header-user-actions .cart-btn {
+    position: relative;
+    display: block;
+}
+
+.header-user-actions .cart-btn > i {
+    font-size: 25px;
+}
+
+.header-user-actions .cart-btn .count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 4px;
+    border-radius: 20px;
+    background-color: var(--background3);
+    color: #fff;
+    font-size: 12px;
+}
+
+/*-----------------------------------*\
+  #WELCOME SECTION
+\*-----------------------------------*/
+#wapper_login{
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: #8888889a;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    top: 0;
+    font-size: 20px;
+}
+
+.login-container {
+    display: flex;
+    width: 70%;
+    box-shadow: 0 0 10px #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* .close-button i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    background-color: #f5f5f5;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    color: #000000;
+} */
+/* 
+.close-button:hover {
+    background-color: #e0e0e0;
+} */
+
+.welcome-section, .login-section {
+    padding: 40px;
+}
+
+.welcome-section {
+    background-color: #f7f7f7;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-section .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-section p {
+    margin-top: 20px;
+}
+
+.welcome-section a {
+    color: #00a3ff;
+    text-decoration: none;
+}
+/*-----------------------------------*\
+  #LOGIN SECTION
+\*-----------------------------------*/
+
+.login-section {
+    background-color: #fff;
+    width: 50%;
+}
+
+.login-section h2 {
+    margin-bottom: 20px;
+}
+
+.login-section label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-section > .login{
+    width: 100%;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.login-section > .login label {
+    margin-top: 20px;
+}
+
+.login-section > .login input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.login-section input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.keep-logged-in {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sub{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%; ;
+    margin: 0 auto;
+}
+
+.keep-logged-in input {
+    width: 20px;
+}
+
+.keep-logged-in label {
+    color: #333;
+    padding-top: 3px;
+}
+
+.login-section button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-section .forgot-password {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    color: #00a3ff;
+    text-decoration: none;
+}
+
+.social-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+}
+
+.social-login button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.social-login .google {
+    background-color: #dd4b39;
+}
+
+.social-login .facebook {
+    background-color: #3b5998;
+}
+
+.social-login .twitter {
+    background-color: #1da1f2;
+}
+
+
+/*-----------------------------------*\
+  #MAIN
+\*-----------------------------------*/
+#wapper_register{
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: #8888889a;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    top: 0;
+    font-size: 20px;
+}
+
+.register-container {
+    display: flex;
+    width: 70%;
+    box-shadow: 0 0 10px #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    background-color: #f5f5f5;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    color: #000000;
+}
+
+.close-button:hover { background-color: #e0e0e0;}
+
+/*-----------------------------------*\
+  #WELCOME SECTION
+\*-----------------------------------*/
+.welcome-section, .register-section {  padding: 40px;}
+
+.welcome-section {
+    background-color: #f7f7f7;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-section .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-section p { margin-top: 20px;}
+
+.welcome-section a {
+    color: #00a3ff;
+    text-decoration: none;
+}
+
+/*-----------------------------------*\
+  #REGISTER SECTION
+\*-----------------------------------*/
+
+.register-section {
+    background-color: #fff;
+    width: 50%;
+}
+
+.register-section h2 { margin-bottom: 20px;}
+
+.register-section label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.register{
+    width: 100%;
+    padding-right: 10px;
+    margin-bottom: 0px;
+}
+
+.register input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.register-section input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.keep-logged-in {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.keep-logged-in input { width: 20px;}
+
+.keep-logged-in label {
+    color: #333;
+    padding-top: 3px;
+}
+
+.sub{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%; ;
+    margin: 0 auto;
+}
+
+.register-section button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-section .forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    color: #00a3ff;
+    text-decoration: none;
+}
+
+.social-register {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-register p { margin-bottom: 10px;}
+
+.social-register button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.social-register .google { background-color: #dd4b39;}
+
+.social-register .facebook { background-color: #3b5998;}
+
+.social-register .twitter { background-color: #1da1f2;}

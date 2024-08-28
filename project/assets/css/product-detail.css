@@ -1,0 +1,296 @@
+/*-----------------------------------*\
+  #PRODUCT FEATURED
+\*-----------------------------------*/
+.product-featured { 
+    margin-bottom: 30px;
+}
+
+.product-featured .showcase {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+}
+
+.product-featured .showcase-container {
+    min-width: 100%;
+    padding: 30px;
+    border: 1px solid var(--item);
+    border-radius: 10px;
+    scroll-snap-align: start;
+}
+
+.product-featured .showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BANNER SLIDER PRODUCT */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.mySlides img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mySlides .default {
+  opacity: 1;
+}
+
+.mySlides .hover {
+  opacity: 0;
+  position: absolute; 
+  top: 0;
+  left: 0;
+}
+
+.mySlides:hover .default {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.mySlides:hover .hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: var(--background1);
+}
+
+.color-img {
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+.active, .color-img:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.product-featured .showcase-content { margin-top: 30px; }
+
+.product-featured .showcase-title {
+    color: var(--item);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.product-featured .showcase-desc {
+  color: var(--item3);
+  font-size: 18px;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+.showcase-color .content{
+  color: var(--item1);
+  margin-bottom: 10px;
+}
+
+.showcase-color .showcase-image-color {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.showcase-color .showcase-image-color a {
+  border: var(--item-border);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.showcase-color .showcase-image-color a:hover {
+  border: var(--item-border2);
+}
+
+.product-featured .price-box {
+  font-size: var(--price-font-size);
+  display: flex;
+  gap: 10px;
+}
+
+.product-featured .price {
+  color: var(--item2);
+  font-weight: 700;
+}
+
+.product-featured del {
+  color: var(--item1);
+  font-weight: 300;
+}
+
+.product-featured .showcase-quantity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  color: var(--item1);
+}
+
+.showcase-quantity label {
+  display: inline-block;
+}
+
+.showcase-quantity .quantity {
+  display: block;
+  padding: 3px 5px;
+  width: 100px;
+  border: 0.5px solid var(--item1);
+  border-radius: 5px;
+  appearance: none;
+  font-size: 18px;
+}
+
+.product-featured .showcase-btn {
+  display: flex;
+}
+
+.product-featured .add-cart-btn {
+    background: var(--item1);
+    padding: 8px 15px;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius:10px;
+    margin-bottom: 15px;
+    transition: 0.2s ease;
+}
+
+.product-featured .add-cart-btn:hover {
+  background: var(--item);
+  color: #fff;
+}
+
+
+
+
+/*-----------------------------------*\
+  #PRODUCT INFORMATION
+\*-----------------------------------*/
+.inf-container {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+#navbar-inf {
+  position: sticky;
+  top: 120px;
+}
+
+#navbar-inf .navbar-list {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  flex-wrap: nowrap;
+  width: 100%;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+#navbar-inf .navbar-list .navbar-item {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+} 
+
+.navbar-list .navbar-item a {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #000;
+  border: 1px solid #e5e4e4;
+  border-radius: 0;
+  font-weight: 600;
+}
+
+.layout-inf {
+  padding: 15px 10px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px #ccc;
+  margin-bottom: 20px;
+}
+
+.layout-inf .inf-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.layout-inf p {
+  margin: 5px 20px;
+  text-align: justify;
+}
+
+.layout-inf img, .inf-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.inf-content {
+  display: grid;
+  grid-auto-flow: column;
+}
