@@ -52,7 +52,6 @@
                                                 <div class="mySlides fade">
                                                     <img src="../../../project<?=$product['color-img3']?>" style="width:100%" class="default">
                                                     <img src="../../../project<?=$product['color-img-hover2']?>" style="width:100%" class="hover">
-
                                                 </div>
 
                                                 <div class="mySlides fade">
