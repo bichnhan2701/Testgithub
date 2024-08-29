@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a { 
+    text-decoration: none; 
+    color: var(--item);
+}
+  
+li { list-style: none; }
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover, i:hover{
+    color: #ff919e;
+    border-bottom-color: #ff919e;
+    transition: color 0.2s ease;
+}
+
+i:hover {
+    color: #ff919e;
+    transition: color 0.2s ease;
+}
+
+.clear {
+    clear: both;
+}
+
+.wrapper {
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* HEADER */
+header .header-container {
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.header-container i {
+    font-size: 20px;
+}
+
+.bar-icon {
+    width: 5%;
+    margin-left: 20px;
+}
+
+.logo {
+    width: 20%;
+}
+
+.logo img {
+    padding: 5px;
+}
+
+.header-container > h3 {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    font-size: 30px;
+}
+
+.user, .logout {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 15%;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border-bottom: 1px solid #31363F;
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+
+/* SIDEBAR */
+.sidebar-container {
+    position: absolute;
+    top: 80px;
+    bottom: 100px;
+    width: 20%;
+    /* overflow-y: auto;
+    overscroll-behavior: auto; */
+    transition: 0.5s ease;
+    z-index: 5;
+    background-color: #D77FA1;
+    margin-top: 10px;
+}
+
+.sidebar-container ul li {
+    padding: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    color: #FEF6FB;
+    font-weight: 600;
+}
+
+.sidebar-container ul li:hover {
+    background-color: #E6B2C6;
+    transition: 0.5s ease;
+}
+
+/* MAIN */
+.main-container {
+    position: absolute;
+    top: 80px;
+    bottom: 100px;
+    right: 0;
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+/* FOOTER */
+.footer-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    padding: 20px;
+    background-color: #D6E5FA;
+}
+
+.footer-container p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.footer-container p a {
+    color: #D77FA1;
+}
+
+.footer-container p a:hover {
+    color: #333;
+    transition: color 0.2s ease;
+}
