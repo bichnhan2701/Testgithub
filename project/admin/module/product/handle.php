@@ -1,6 +1,8 @@
 <?php
     include("../../../component/connect/config.php");
-    if (isset($_POST['idType']) && isset($_POST['nameType']) && isset($_POST['quantityType'])) {
+    if (isset($_POST['id']) && isset($_POST['name']) && isset($_POST['quantityType'])) {
+        $masp = $_POST['idType'];
+        $tensp = $_POST['idType'];
         $maloai = $_POST['idType'];
         $tenloai = $_POST['nameType'];
         $soluong = $_POST['quantityType'];
