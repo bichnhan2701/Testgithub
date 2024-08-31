@@ -141,7 +141,6 @@ body::-webkit-scrollbar-thumb:hover { background: #CACACA; }
 /*-----------------------------------*\
     #HEADER
 \*-----------------------------------*/
-
 header {
     position: fixed;
     top: 0;

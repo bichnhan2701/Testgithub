@@ -11,6 +11,7 @@
 <body>
     <div class="wrapper">
         <?php
+            include("../../project/component/connect/config.php");
             include("module/header.php");
             include("module/sidebar.php");
             include("module/main.php");

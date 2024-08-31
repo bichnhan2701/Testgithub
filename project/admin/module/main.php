@@ -7,13 +7,14 @@
         }
 
         if ($temp == 'quanlydanhmuc') {
-            include("module/category/add.php");
+            require_once("module/category/add.php");
+            require_once("module/category/list.php");
         } else if ($temp == 'quanlysanpham') {
-            include("");
-        } if ($temp == 'quanlydonhang') {
-            include("");
+            require_once("");
+        } else if ($temp == 'quanlydonhang') {
+            require_once("");
         } else {
-            include("module/dashboard.php");
+            require_once("module/dashboard.php");
         }
     ?>
 </div>
