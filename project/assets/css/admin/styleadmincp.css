@@ -197,6 +197,11 @@ table .btn > input {
     overflow: scroll;
     width: 90%;
 }
+
+.list-container table {
+    width: 100%;
+}
+
 .list-container table thead {
     line-height: 30px;
     background-color: #E6B2C6;
@@ -209,9 +214,13 @@ table .btn > input {
 }
 
 .list-container table td {
-    /* vertical-align: middle; */
     overflow-inline:hidden;
-    /* overflow: hidden; */
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.list-container table td img {
+    width: 100%;
 }
 
 .list-container table tbody .act button{

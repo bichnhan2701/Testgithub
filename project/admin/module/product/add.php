@@ -1,5 +1,5 @@
 <div class="add-container">
-    <h3 class="title">Thêm loại sản phẩm</h3>
+    <h3 class="title">Thêm sản phẩm</h3>
     <table style="width: 90%;">
         <form method="POST" action="../../../project/admin/module/product/handle.php" enctype="multipart/form-data">
             <tr>
@@ -20,7 +20,7 @@
             </tr>
             <tr>
                 <td class="title1">Giá đã giảm</td>
-                <td> <input type="text" name="price" placeholder="Nhập giá"></td>
+                <td> <input type="text" name="price_del" placeholder="Nhập giá"></td>
             </tr>
             <tr>
                 <td class="title1">Số lượng</td>

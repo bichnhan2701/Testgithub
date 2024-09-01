@@ -29,14 +29,14 @@
                     <td><?php echo $row['price']?></td>
                     <td><?php echo $row['price_del']?></td>
                     <td><?php echo $row['quantity_product']?></td>
-                    <td><?php echo $row['img_poster1']?></td>
-                    <td><?php echo $row['img_poster2']?></td>
+                    <td> <img src="module/product/uploads/<?php echo $row['img_poster1']?>"> </td>
+                    <td> <img src="module/product/uploads/<?php echo $row['img_poster2']?>"> </td>
                     <td class="act">
                         <button>
-                            <a href="module/category/handle.php?idType=<?php echo $row['idProduct'] ?>">Xóa</a>
+                            <a href="module/product/handle.php?idProduct=<?php echo $row['idProduct'] ?>">Xóa</a>
                         </button>
                         <button>
-                            <a href="?page=quanlydanhmuc&query=modify&idType=<?php echo $row['idProduct'] ?>">Sửa</a>
+                            <a href="?page=quanlysanpham&query=modify&idProduct=<?php echo $row['idProduct'] ?>">Sửa</a>
                         </button>
                     </td>
                 </tr>
