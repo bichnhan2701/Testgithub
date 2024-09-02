@@ -32,6 +32,22 @@ i:hover {
     clear: both;
 }
 
+.has-scrollbar { padding-bottom: 5px; }
+  
+.has-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 20px;
+}
+
+.has-scrollbar:hover::-webkit-scrollbar-thumb { background: #EEEEEE; }
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover { background: #CACACA; }
+
 .wrapper {
     position: relative;
     width: 80%;
@@ -194,12 +210,17 @@ table .btn > input {
 
 /* list */
 .list-container {
-    overflow: scroll;
     width: 90%;
+    overflow: auto hidden;
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;
+    overscroll-behavior-inline: contain;
 }
 
 .list-container table {
     width: 100%;
+    overflow: hidden;
+    scroll-snap-align: start;
 }
 
 .list-container table thead {

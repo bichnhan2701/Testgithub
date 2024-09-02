@@ -3,6 +3,7 @@
     $masp = $_POST['idProduct'] ?? null;
     $tensp = $_POST['nameProduct'] ?? null;
     $maloai = $_POST['idType'] ?? null;
+    // $tenloai = $_POST['nameType'] ?? null;
     $gia1 = $_POST['price'] ?? null;
     $gia2 = $_POST['price_del'] ?? null;
     $soluong = $_POST['quantity_product'] ?? null;

@@ -1,5 +1,5 @@
 <?php
-    $sql_list = "SELECT * FROM sanpham ORDER BY idProduct";
+    $sql_list = "SELECT * FROM loaisanpham,sanpham WHERE loaisanpham.idType = sanpham.idType ORDER BY idProduct";
     $query_list = $conn->query($sql_list);
 ?>
 
@@ -9,7 +9,7 @@
             <thead>
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th> 
-                <th>Mã loại</th>
+                <th>Loại</th>
                 <th>Giá</th>
                 <th>Giá đã giảm</th>
                 <th>Số lượng</th>
@@ -25,7 +25,7 @@
                 <tr>
                     <td><?php echo $row['idProduct']?></td>
                     <td><?php echo $row['nameProduct']?></td>
-                    <td><?php echo $row['idType']?></td>
+                    <td><?php echo $row['nameType']?></td>
                     <td><?php echo $row['price']?></td>
                     <td><?php echo $row['price_del']?></td>
                     <td><?php echo $row['quantity_product']?></td>

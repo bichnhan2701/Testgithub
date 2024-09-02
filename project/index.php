@@ -19,6 +19,7 @@
         </header>
 
         <div class="menu">
+            <?php include("../project/component/connect/config.php"); ?>
             <?php include "component/menu/menu.php" ?>
         </div>
 

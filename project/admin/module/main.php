@@ -18,8 +18,8 @@
             require_once("module/product/list.php");
         } else if ($temp == 'quanlysanpham' && $query=='modify') {
             require_once("module/product/modify.php");
-        // } else if ($temp == 'quanlydonhang') {
-        //     require_once("");
+        } else if ($temp == 'quanlydonhang') {
+            // require_once("");
         } else {
             require_once("module/dashboard.php");
         }

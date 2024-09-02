@@ -19,10 +19,20 @@
         </header>
 
         <div class="menu">
+            <?php include("../../component/connect/config.php"); ?>
             <?php include "../../component/menu/menu.php" ?>
         </div>
 
         <main>
+            <?php 
+                include("../../component/connect/config.php"); 
+                if (isset($_GET['page'])){
+                    $tmp = $_GET['page'];
+                } else {
+                    $tmp = '';
+                }
+            ?>
+
                 <div class="banner-container">
                     <?php include "banner.php" ?>
                 </div>

@@ -11,8 +11,19 @@
                 <td> <input type="text" name="nameProduct" placeholder="Nhập tên sản phẩm"></td>
             </tr>
             <tr>
-                <td class="title1">Mã loại</td>
-                <td> <input type="text" name="idType" placeholder="Nhập mã loại"></td>
+                <td class="title1">Loại</td>
+                <td> 
+                    <select name="idType" id="">
+                        <?php 
+                            $sql_type = "SELECT * FROM loaisanpham ORDER BY idType DESC";
+                            $query_type = $conn->query($sql_type);
+                            while ($row_type = $query_type->fetch(PDO::FETCH_ASSOC)) {
+                            
+                        ?>
+                        <option value="<?php echo $row_type['idType'] ?>"><?php echo $row_type['nameType'] ?></option>
+                        <?php } ?>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td class="title1">Giá </td>
@@ -34,15 +45,6 @@
                 <td class="title1">Ảnh 2</td>
                 <td> <input type="file" name="img_poster2"></td>
             </tr>
-            <!-- <tr>
-                <td class="title1">Tình trạng</td>
-                <td> 
-                    <select name="status" id="">
-                        <option value="1">Hiển thị</option>
-                        <option value="2">Ẩn</option>
-                    </select>
-                </td>
-            </tr> -->
             <tr> <td class="btn" colspan="1"><input type="submit" value="Thêm" name="addProduct"></td> </tr>
         </form>
     </table>
