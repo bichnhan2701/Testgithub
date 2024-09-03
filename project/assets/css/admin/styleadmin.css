@@ -235,9 +235,15 @@ table .btn > input {
 }
 
 .list-container table td {
-    overflow-inline:hidden;
+    overflow: hidden;
     min-width: 200px;
     max-width: 300px;
+}
+
+.detail-product table td:not(:last-child) {
+    overflow: hidden;
+    white-space: pre;
+    width: 200px;
 }
 
 .list-container table td img {

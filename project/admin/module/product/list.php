@@ -2,7 +2,6 @@
     $sql_list = "SELECT * FROM loaisanpham,sanpham WHERE loaisanpham.idType = sanpham.idType ORDER BY idProduct";
     $query_list = $conn->query($sql_list);
 ?>
-
 <div class="list-container has-scrollbar">
     <h3 class="title">Danh sách sản phẩm</h3>
     <table style="width: 90%; border-collapse: collapse; " border="1">

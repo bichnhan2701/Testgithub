@@ -20,7 +20,7 @@
             require_once("module/product/modify.php");
         } else if ($temp == 'quanlychitietsanpham' && $query=='add') {
             require_once("module/product_detail/add.php");
-            // require_once("module/product_detail/list.php");
+            require_once("module/product_detail/list.php");
         } else if ($temp == 'quanlychitietsanpham' && $query=='modify') {
             // require_once("module/product_detail/modify.php");
         } else {

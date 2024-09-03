@@ -31,8 +31,10 @@
                         <img src="../../admin/module/product/uploads/<?=$product['img_poster1']?>" alt="<?=$product['nameProduct']?>" class="product-img default">
                         <img src="../../admin/module/product/uploads/<?=$product['img_poster2']?>" alt="<?=$product['nameProduct']?>" class="product-img hover">
                         <div class="showcase-actions">
-                            <button class="btn-action" onclick="addToCart('<?=$product['idProduct']?>')">
-                                <i class="fa-solid fa-cart-plus"></i>
+                            <button class="btn-action" name="addToCart">
+                                <a href="../cart.php?id=<?php echo $product['idProduct'] ?>">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </a>
                             </button>
                             <button class="buy-btn">
                                 <a href="#">Mua</a>
