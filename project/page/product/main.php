@@ -41,7 +41,7 @@
                     </div>
                     <div class="showcase-content">
                         <p class="showcase-category"><?=$product['nameType']?></p>
-                        <a href="../../../project/page/product/product.php?id=<?php echo $product['idProduct']?>">
+                        <a href="../../../project/page/product/product-detail.php?id=<?php echo $product['idProduct']?>">
                             <h3 class="showcase-title"><?=$product['nameProduct']?></h3>
                         </a>
                         <div class="showcase-rating">

@@ -30,7 +30,7 @@
                 <td> <input type="text" name="price" placeholder="Nhập giá"></td>
             </tr>
             <tr>
-                <td class="title1">Giá đã giảm</td>
+                <td class="title1">Giá chưa giảm</td>
                 <td> <input type="text" name="price_del" placeholder="Nhập giá"></td>
             </tr>
             <tr>
