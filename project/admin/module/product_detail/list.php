@@ -51,15 +51,19 @@
                         $img_hover_color = $row['img_hover_color' . $i];
                     ?>
                     <!-- Check if the description, image, and hover image are not NULL -->
-                    <td><?php echo $descColor !== null ? $descColor : ''; ?></td>
+                    <td><?php echo $descColor !== null ? $descColor : 'không có'; ?></td>
                     <td>
                         <?php if ($img_color !== null) { ?>
                             <img src="module/product_detail/uploads/<?php echo $img_color; ?>" alt="Màu <?php echo $i; ?>">
+                        <?php } else { ?>
+                            <p>Không có</p>
                         <?php } ?>
                     </td>
                     <td>
                         <?php if ($img_hover_color !== null) { ?>
                             <img src="module/product_detail/uploads/<?php echo $img_hover_color; ?>" alt="Màu <?php echo $i; ?> hover">
+                        <?php } else { ?>
+                            <p>Không có</p>
                         <?php } ?>
                     </td>
                     <?php } ?>

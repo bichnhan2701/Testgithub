@@ -32,7 +32,7 @@
                         <img src="../../admin/module/product/uploads/<?=$product['img_poster2']?>" alt="<?=$product['nameProduct']?>" class="product-img hover">
                         <div class="showcase-actions">
                             <button class="btn-action" name="addToCart">
-                                <a href="../cart.php?id=<?php echo $product['idProduct'] ?>">
+                                <a href="../addToCart.php?id=<?php echo $product['idProduct'] ?>">
                                     <i class="fa-solid fa-cart-plus"></i>
                                 </a>
                             </button>

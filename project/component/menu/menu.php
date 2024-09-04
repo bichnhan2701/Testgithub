@@ -13,7 +13,7 @@
                     </li>
 
                     <li class="menu-category">
-                        <a href="../../../project/page/product/product.php" class="menu-title">Sản phẩm</a>
+                        <a href="../../../project/page/product/index_product.php" class="menu-title">Sản phẩm</a>
 
                         <ul class="dropdown-list">
                         <?php 
@@ -22,7 +22,7 @@
                             while ($row_type = $query_type->fetch(PDO::FETCH_ASSOC)) {                      
                         ?>
                             <li class="dropdown-title">
-                                <a href="../../../project/page/product/product.php?id=<?php echo $row_type['idType']?>"><?php echo $row_type['nameType'] ?></a>
+                                <a href="../../../project/page/product/index_product.php?id=<?php echo $row_type['idType']?>"><?php echo $row_type['nameType'] ?></a>
                             </li>
                         <?php } ?>
                         </ul>

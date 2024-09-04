@@ -19,7 +19,7 @@
                                 <h3 class="category-item-title"><?php echo $row_type['nameType'] ?></h3>
                                 <p class="category-item-amount">(<?php echo $row_type['quantityType'] ?>)</p>
                             </div>
-                            <a href="../../../project/page/product/product.php?id=<?php echo $row_type['idType']?>" class="category-btn">Hiện tất cả</a>
+                            <a href="../../../project/page/product/index_product.php?id=<?php echo $row_type['idType']?>" class="category-btn">Hiện tất cả</a>
                         </div>
                     </div>
                     <?php } ?>
