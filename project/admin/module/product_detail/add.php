@@ -11,7 +11,7 @@
                             $query_product = $conn->query($sql_product);
                             while ($row_product = $query_product->fetch(PDO::FETCH_ASSOC)) {                            
                         ?>
-                        <option value="<?php echo $row_product['idProduct'] ?>"><?php echo $row_product['nameProduct'] ?></option>
+                        <option value="<?php echo $row_product['idProduct'] ?>"><?php echo $row_product['idProduct'] ?></option>
                         <?php } ?>
                     </select>
                 </td>
@@ -33,14 +33,53 @@
                 <td><textarea name="descColorTable" cols="30" rows="3"></textarea></td>
             </tr>
             <tr>
-                <td class="title1">Số lượng màu</td>
-                <td>
-                    <textarea name="descColorQuantity" id="descColorQuantity" cols="30" rows="1" oninput="updateColorFields()"></textarea>
-                </td>
+                <td class="title1">Mô tả màu 1</td>
+                <td><textarea name="descColor1" cols="30" rows="3"></textarea></td>
             </tr>
-            <tbody id="colorFieldsContainer">
-                <!-- Dynamic color fields will be generated here -->
-            </tbody>
+            <tr>
+                <td class="title1">Ảnh màu 1</td>
+                <td><input type="file" name="img_color1"></td>
+            </tr>
+            <tr>
+                <td class="title1">Ảnh màu 1 hover</td>
+                <td><input type="file" name="img_hover_color1"></td>
+            </tr>
+            <tr>
+                <td class="title1">Mô tả màu 2</td>
+                <td><textarea name="descColor2" cols="30" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td class="title1">Ảnh màu 2</td>
+                <td><input type="file" name="img_color2"></td>
+            </tr>
+            <tr>
+                <td class="title1">Ảnh màu 2 hover</td>
+                <td><input type="file" name="img_hover_color2"></td>
+            </tr>
+            <tr>
+                <td class="title1">Mô tả màu 3</td>
+                <td><textarea name="descColor3" cols="30" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td class="title1">Ảnh màu 3</td>
+                <td><input type="file" name="img_color3"></td>
+            </tr>
+            <tr>
+                <td class="title1">Ảnh màu 3 hover</td>
+                <td><input type="file" name="img_hover_color3"></td>
+            </tr>
+            <tr>
+                <td class="title1">Mô tả màu 4</td>
+                <td><textarea name="descColor4" cols="30" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td class="title1">Ảnh màu 4</td>
+                <td><input type="file" name="img_color4"></td>
+            </tr>
+            <tr>
+                <td class="title1">Ảnh màu 4 hover</td>
+                <td><input type="file" name="img_hover_color4"></td>
+            </tr>
             <tr>
                 <td class="title1">Ảnh bảng màu</td>
                 <td> <input type="file" name="img_colorTable"></td>
@@ -49,48 +88,13 @@
                 <td class="title1">Ảnh thông tin</td>
                 <td> <input type="file" name="img_inf"></td>
             </tr>
+            <tr>
+                <td class="title1">Ảnh thành phần</td>
+                <td> <input type="file" name="img_ingredient"></td>
+            </tr>
             <tr> 
                 <td class="btn" colspan="1"><input type="submit" value="Thêm" name="addProductDetail"></td> 
             </tr>
         </form>
     </table>
 </div>
-
-<script>
-function updateColorFields() {
-    // Read the number of colors from the input
-    const colorQuantity = parseInt(document.getElementById('descColorQuantity').value) || 0;
-    const colorFieldsContainer = document.getElementById('colorFieldsContainer');
-    colorFieldsContainer.innerHTML = '';  // Clear previous fields
-
-    // Generate dynamic fields based on the number of colors
-    for (let i = 1; i <= colorQuantity; i++) {
-        // Create textareas for color descriptions
-        let descColorRow = `
-            <tr>
-                <td class="title1">Mô tả màu ${i}</td>
-                <td><textarea name="descColor${i}" cols="30" rows="3"></textarea></td>
-            </tr>
-        `;
-        colorFieldsContainer.insertAdjacentHTML('beforeend', descColorRow);
-
-        // Create file inputs for color images
-        let imgColorRow = `
-            <tr>
-                <td class="title1">Ảnh màu ${i}</td>
-                <td><input type="file" name="img_color${i}"></td>
-            </tr>
-        `;
-        colorFieldsContainer.insertAdjacentHTML('beforeend', imgColorRow);
-
-        // Create file inputs for hover images
-        let imgHoverColorRow = `
-            <tr>
-                <td class="title1">Ảnh màu ${i} hover</td>
-                <td><input type="file" name="img_hover_color${i}"></td>
-            </tr>
-        `;
-        colorFieldsContainer.insertAdjacentHTML('beforeend', imgHoverColorRow);
-    }
-}
-</script>

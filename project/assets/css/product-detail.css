@@ -46,6 +46,7 @@
 
 .mySlides img {
   width: 100%;
+  min-width: 400px;
   height: auto;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }

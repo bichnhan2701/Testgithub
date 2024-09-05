@@ -211,7 +211,7 @@ table .btn > input {
 /* list */
 .list-container {
     width: 90%;
-    overflow: auto hidden;
+    overflow: hidden;
     overflow-x: auto;
     scroll-snap-type: inline mandatory;
     overscroll-behavior-inline: contain;
@@ -240,10 +240,18 @@ table .btn > input {
     max-width: 300px;
 }
 
+/* .detail-product table tr {
+    overflow: hidden;
+} */
+
 .detail-product table td:not(:last-child) {
     overflow: hidden;
     white-space: pre;
     width: 200px;
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;
+    overscroll-behavior-inline: contain;
+    scroll-snap-align: start;
 }
 
 .list-container table td img {
