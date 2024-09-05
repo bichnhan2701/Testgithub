@@ -36,7 +36,7 @@
                         <div class="product-featured">
                             <div class="showcase-container">
                                 <?php foreach($kq as $product) {?>
-                                    <form class="showcase" method="POST" action="../../page/addToCart.php?id=<?php echo $product['idProduct'] ?>">
+                                    <form class="showcase" method="POST" action="../../page/addToCart.php?id=<?php echo $product['idProduct']?>">
                                         <div class="showcase-banner">
                                             <div class="slideshow-container">
                                                 <!-- Full-width images with number and caption text -->
@@ -70,9 +70,9 @@
                                             <a href="#"> <h3 class="showcase-title"><?=$product['nameProduct']?></h3> </a>
                                             <hr>
                                                 <div class="price-box">
-                                                <p class="price"><?=$product['price']?></p>
+                                                <p class="price"><?=number_format($product['price'], 0, ',', '.')?>₫</p>
 
-                                                <del><?=$product['price_del']?></del>
+                                                <del><?=number_format($product['price_del'], 0, ',', '.')?>₫</del>
                                             </div>
                                             <hr>
                                             <p class="showcase-desc">
@@ -111,11 +111,13 @@
                                             <div class="showcase-quantity">
                                                 <label for="quantity">Số lượng </label>
                                                 <input class="quantity" type="number" name="quantity" value="1" min="1">
+                                                <label for="quantity">Số lượng còn <?php echo $product['quantity_product'] ?></label>
                                             </div>
                                             
                                             <div class="showcase-btn">
-                                                <!-- <a href="../page/cart.html"><button class="add-cart-btn">Thêm vào giỏ hàng</button></a> -->
+                                                <input type="hidden" name="addToCart" value="1">
                                                 <button type="submit" class="add-cart-btn">Thêm vào giỏ hàng</button>
+                                                 <!-- <input type="submit" class="add-cart-btn" name="addTocart" value="Thêm vào giỏ hàng"> -->
                                                 <!-- <a href="../page/checkout.html"><button class="add-cart-btn">Mua ngay</button></a> -->
                                                 <button type="submit" class="add-cart-btn">Mua ngay</button>
                                             </div>

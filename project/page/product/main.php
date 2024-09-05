@@ -54,8 +54,8 @@
                             <i class="fa-solid fa-star star"></i>
                         </div>
                         <div class="price-box">
-                            <p class="price">₫<?=$product['price']?></p>
-                            <del>₫<?=$product['price_del']?></del>
+                            <p class="price"><?=number_format($product['price'], 0, ',', '.')?>₫</p>
+                            <del><?=number_format($product['price_del'], 0, ',', '.')?>₫</del>
                         </div>
                     </div>
                 </div>
