@@ -24,7 +24,31 @@
         </div>
 
         <main>
-            <?php include "../product/product.php" ?>
+            <div class="container-main-product">
+                <div class="category-container">
+                    <?php require_once("category.php"); ?>
+                </div>
+                <?php 
+                    include("../../../project/component/connect/config.php"); 
+                    $temp = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : '';
+                    if (isset($_GET['page'])) {
+                        $temp = htmlspecialchars($_GET['page']);
+                    }
+                ?>
+                <div class="main-container">
+                    <?php 
+                        if ($temp == 'search'){
+                            require_once("searchProduct.php");
+                        } else {
+                            require_once("main.php"); 
+                        }  
+                    ?>
+                </div>
+
+                <div class="sidebar-container">
+                    <?php require_once("sidebar.php"); ?>
+                </div>
+            </div>
         </main>
 
         <footer>

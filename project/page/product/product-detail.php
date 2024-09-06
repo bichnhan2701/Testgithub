@@ -115,11 +115,8 @@
                                             </div>
                                             
                                             <div class="showcase-btn">
-                                                <input type="hidden" name="addToCart" value="1">
-                                                <button type="submit" class="add-cart-btn">Thêm vào giỏ hàng</button>
-                                                 <!-- <input type="submit" class="add-cart-btn" name="addTocart" value="Thêm vào giỏ hàng"> -->
-                                                <!-- <a href="../page/checkout.html"><button class="add-cart-btn">Mua ngay</button></a> -->
-                                                <button type="submit" class="add-cart-btn">Mua ngay</button>
+                                                <input class="add-cart-btn" type="submit" name="addToCart" value="Thêm vào giỏ hàng">
+                                                <input class="add-cart-btn" type="submit" name="" value="Mua ngay">
                                             </div>
                                         </div>
                                     </form>

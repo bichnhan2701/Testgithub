@@ -14,12 +14,12 @@
 </head>
 <body>
     <main>
-        <div id="wapper_register" >
+        <form id="wapper_register" >
             <div class="register-container" style="position: relative;">
                 <div onclick="closeHandle()" class="close-button">
                     <i class="fa-solid fa-xmark"></i>
                 </div>
-                <!-- WELCOME SECTION -->
+                
                 <div class="welcome-section">
                     <h1>Chào mừng bạn!</h1>
                     <div class="logo">
@@ -27,11 +27,10 @@
                     </div>
                     <p>
                         Bạn có phải là thành viên? 
-                        <a href="../../../project/model/login/login.php">Đăng nhập</a>
+                        <button onclick="handleLogin()"> Đăng nhập </button>
                     </p>
                 </div>
 
-                <!-- REGISTER-SECTION -->
                 <div class="register-section">
                     <h2>Đăng kí</h2>
                     <form>
@@ -63,7 +62,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
+    <script src="../../../project/assets/js/main.js"></script>
 </body>
 </html>

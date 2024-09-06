@@ -6,14 +6,14 @@
                             <div class="showcase-container">
                                 <div class="showcase">
                                     <div class="showcase-banner">
-                                        <a href="">
+                                        <a href="../../../project/page/product/product-detail.php?id=tint-lip1">
                                             <img src="../project/assets/images/general/home-deal1.webp" class="showcase-img default">
                                             <img src="../project/assets/images/general/home-deal1-hover.png" class="showcase-img hover">
                                         </a>
                                     </div>
 
                                     <div class="showcase-content">
-                                        <a href="#">
+                                        <a href="../../../project/page/product/product-detail.php?id=tint-lip1">
                                             <h3 class="showcase-title">3CE Lazy Pop Lip Stain Son tint lên môi chuẩn sắc màu không trôi Pop Stain 3CE 4.5g </h3>
                                         </a>
 
@@ -36,8 +36,10 @@
                                             <del>$200.00</del>
                                         </div>
 
-                                        <button class="add-cart-btn">mua ngay</button>
-                                        <button class="add-cart-btn">thêm vào giỏ hàng</button>
+                                        <button class="add-cart-btn">
+                                            <a href="../../../project/page/product/product-detail.php?id=tint-lip1" style="color: #fff;">khám phá</a>
+                                        </button>
+                                        <!-- <button class="add-cart-btn">thêm vào giỏ hàng</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -45,14 +47,14 @@
                             <div class="showcase-container">
                                 <div class="showcase">
                                     <div class="showcase-banner">
-                                        <a href="">
+                                        <a href="../../../project/page/product/product-detail.php?id=duong-lip1">
                                             <img src="../project/assets/images/general/home-deal2.webp" class="showcase-img default">
                                             <img src="../project/assets/images/general/home-deal2-hover.png" class="showcase-img hover">
                                         </a>
                                     </div>
                                 
                                     <div class="showcase-content">
-                                        <a href="#">
+                                        <a href="../../../project/page/product/product-detail.php?id=duong-lip1">
                                             <h3 class="showcase-title">Son môi 3CE Shine Reflector son môi tỏa sáng phản chiếu 1.7g</h3>
                                         </a>
 
@@ -75,8 +77,9 @@
                                             <del>$200.00</del>
                                         </div>
 
-                                        <button class="add-cart-btn">mua ngay</button>
-                                        <button class="add-cart-btn">thêm vào giỏ hàng</button>
+                                        <button class="add-cart-btn">
+                                            <a href="../../../project/page/product/product-detail.php?id=duong-lip1" style="color: #fff;">khám phá</a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

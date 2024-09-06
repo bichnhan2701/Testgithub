@@ -18,7 +18,7 @@
 <!-- PRODUCT -->
 <div class="container">
     <!-- PRODUCT MINIMAL -->
-
+    
     <!-- PRODUCT GRID -->
     <div class="product-main">
         <h2 class="title">Sản phẩm</h2>
@@ -31,11 +31,13 @@
                         <img src="../../admin/module/product/uploads/<?=$product['img_poster1']?>" alt="<?=$product['nameProduct']?>" class="product-img default">
                         <img src="../../admin/module/product/uploads/<?=$product['img_poster2']?>" alt="<?=$product['nameProduct']?>" class="product-img hover">
                         <div class="showcase-actions">
-                            <button class="btn-action" name="addToCart">
-                                <a href="../addToCart.php?id=<?php echo $product['idProduct'] ?>">
+                            <form action="../addToCart.php?id=<?php echo $product['idProduct'] ?>" method="POST">
+                                <input type="hidden" name="addToCart" value="1">
+                                <button class="btn-action" type="submit">
                                     <i class="fa-solid fa-cart-plus"></i>
-                                </a>
-                            </button>
+                                </button>
+                            </form>
+                            
                             <button class="buy-btn">
                                 <a href="#">Mua</a>
                             </button>

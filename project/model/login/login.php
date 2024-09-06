@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <!-- css link -->
-    <link rel="stylesheet" href="../../../project/model/login/login.css">
-    <link rel="stylesheet" href="../../../project/assets/css/font-icons/fontawesome-free-6.6.0-web/css/all.css">
+    
     <!-- js link -->
-    <script src="../../../project/assets/js/main.js"></script>
+    
 </head>
 <body>
     <main>
-        <div id="wapper_login">
+        <form action="" id="wapper_login">
             <div class="login-container" style="position: relative;">
                 <div onclick="closeHandle()" class="close-button">
                     <i class="fa-solid fa-xmark"></i>
                 </div>
-                <!-- WELCOME SECTION -->
+                
                 <div class="welcome-section">
                     <h1>Chào mừng bạn!</h1>
                     <div class="logo"> 
@@ -25,11 +24,10 @@
                     </div>
                     <p>
                         Bạn chưa phải là thành viên? 
-                        <a href="../../../project/model/register/register.php">Đăng kí</a>
+                        <button onclick="handleRegister()"> Đăng kí </button>
                     </p>
                 </div>
 
-                <!-- LOGIN SECTION -->
                 <div class="login-section">
                     <h2>Đăng nhập</h2>
                     <form>
@@ -58,7 +56,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
+    <script src="../../../project/assets/js/main.js"></script>
 </body>
 </html>

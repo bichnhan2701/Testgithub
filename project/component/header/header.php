@@ -15,11 +15,13 @@
         </a>
 
         <div class="header-search-container">
-            <input type="search" class="search-field" placeholder="Nhập tên sản phẩm...">
-
-            <button class="search-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+            <form action="../../../project/page/product/index_product.php?page=search">
+                <input type="search" class="search-field" placeholder="Nhập tên sản phẩm..." name="key">
+                <input type="hidden" name="page" value="search">
+                <button class="search-btn" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
         </div>
 
         <div class="header-user-actions">
@@ -28,109 +30,14 @@
                     <i class="fa-solid fa-right-to-bracket"></i> <span>Đăng nhập</span>
                 </button>
                 <div id="handleLogin" style="display: none; position:fixed; left:0 ;z-index: 30"> 
-                    <form action="" id="wapper_login">
-                        <div class="login-container" style="position: relative;">
-                            <div onclick="closeHandle()" class="close-button">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <!-- WELCOME SECTION -->
-                            <div class="welcome-section">
-                                <h1>Chào mừng bạn!</h1>
-                                <div class="logo"> 
-                                    <img src="../../../project/assets/images/general/logo1.png">
-                                </div>
-                                <p>
-                                    Bạn chưa phải là thành viên? 
-                                    <button onclick="handleRegister()"> Đăng kí </button>
-                                </p>
-                            </div>
-
-                            <!-- LOGIN SECTION -->
-                            <div class="login-section">
-                                <h2>Đăng nhập</h2>
-                                <form>
-                                    <div class="login">
-                                        <label for="email">Email hoặc Tên người dùng</label>
-                                        <input type="text" id="email" name="email" required>
-                                        <label for="password">Mật khẩu</label>
-                                        <input type="password" id="password" name="password" required>
-                                        <a href="#" class="forgot-password"> Quên mật khẩu?</a>
-                                    </div>
-
-                                    <div class="keep-logged-in">
-                                        <input type="checkbox" id="keep-logged-in" name="keep-logged-in">
-                                        <label for="keep-logged-in">Lưu mật khẩu</label>
-                                    </div>
-
-                                    <div class="sub">
-                                        <button type="submit" name="submit">Đăng nhập</button>
-                                    </div>
-                                </form>
-
-                                <div class="social-login">
-                                    <p>Hoặc đăng nhập bằng</p>
-                                    <button class="google">G</button>
-                                    <button class="facebook">f</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <?php include($_SERVER['DOCUMENT_ROOT'] . "/project/model/login/login.php"); ?>
                 </div>
 
                 <button class="register" onclick="handleRegister()">
                     <i class="fa-solid fa-user-plus"></i> <span>Đăng ký</span>
                 </button>
                 <div id="handleRegister" style="display: none; position:fixed ; left:0;z-index: 30">
-                    <form id="wapper_register" >
-                        <div class="register-container" style="position: relative;">
-                            <div onclick="closeHandle()" class="close-button">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            <!-- WELCOME SECTION -->
-                            <div class="welcome-section">
-                                <h1>Chào mừng bạn!</h1>
-                                <div class="logo">
-                                    <img src="../../../project/assets/images/general/logo1.png" alt="Logo 3CE Lipsticks">
-                                </div>
-                                <p>
-                                    Bạn có phải là thành viên? 
-                                    <button onclick="handleLogin()"> Đăng nhập </button>
-                                </p>
-                            </div>
-
-                            <!-- REGISTER-SECTION -->
-                            <div class="register-section">
-                                <h2>Đăng kí</h2>
-                                <form>
-                                    <div class="register">
-                                        <label for="email">Email</label>
-                                        <input type="text" id="email" name="email" required>
-                                        <label for="user">Tên người dùng</label>
-                                        <input type="text" id="user" name="user" required>
-                                        <label for="password">Mật khẩu</label>
-                                        <input type="password" id="password" name="password" required>
-                                        <label for="repassword">Nhập lại mật khẩu</label>
-                                        <input type="password" id="repassword" name="repassword" required>
-                                    </div>
-
-                                    <div class="keep-logged-in">
-                                        <input type="checkbox" id="keep-logged-in" name="keep-logged-in">
-                                        <label for="keep-logged-in">Chấp nhận các điều khoản</label>
-                                    </div>
-
-                                    <div class="sub">
-                                    <button type="submit">Đăng kí</button>
-                                    </div>
-                                </form>
-
-                                <div class="social-register">
-                                    <p>Hoặc đăng kí với</p>
-                                    <button class="google">G</button>
-                                    <button class="facebook">f</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <?php include($_SERVER['DOCUMENT_ROOT'] . "/project/model/register/register.php"); ?>
                 </div>
 
                 <button class="user" onclick="handleLogin()">

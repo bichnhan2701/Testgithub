@@ -157,16 +157,31 @@
 .quantity-product{
     display: flex;
     align-items: center;
-    width: fit-content;
+    justify-content: center;
     border: none;
+    width: 100%;
+    margin-top: 40px;
+    gap: 20px;
 }
 
+.quantity-product i {
+    font-size: 20px;
+}
+
+.quantity-product i:hover {
+    color: red;
+}
+
+.quantity-product i:active {
+    color: #b6b6b6;
+}
+/* 
 .quantity-product input:focus{
     outline: none;
 }
 
 .quantity-product input[type=button]{
-    padding: 5px 20px;
+    padding: 5px 15px;
     margin: 0 5px;
     background: #f5f6f2;
     border: 1px solid #bcbcbc;
@@ -182,7 +197,8 @@
 .quantity-product input[type=button]:active{
     background: pink;
     color: white;
-}
+} */
+
 
 .quantity-product .no-spinner::-webkit-inner-spin-button,
 .quantity-product .no-spinner::-webkit-outer-spin-button {
@@ -247,7 +263,7 @@
     justify-content: center;
 }
 
-.maincart_totalprice button{
+.maincart_totalprice button, .empityCart button{
     padding: 5px 0px;
     width: 80%;
     font-size: large;
@@ -258,6 +274,10 @@
     background: pink;
     font-weight: bold;
     color: white;
+}
+
+.empityCart button {
+    width: 20%;
 }
 
 .maincart_totalprice button:hover {

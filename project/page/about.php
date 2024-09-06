@@ -33,7 +33,7 @@
                         Tại đây, bạn sẽ tìm thấy mọi thứ bạn cần để làm đẹp cho đôi môi của mình, 
                         từ những dòng son lì quyến rũ đến son dưỡng ẩm mượt mà.
                     </P>
-                    <button> <a href="../page/product.html">Khám phá</a> </button>
+                    <button> <a href="../../project/page/product/index_product.php">Khám phá</a> </button>
                 </div>
 
                 <div class="box-right">

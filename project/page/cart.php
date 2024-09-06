@@ -2,16 +2,6 @@
     session_start();
     include("../../project/component/connect/config.php");
 ?>
-<!-- <p>Giỏ hàng</p> -->
-<?php
-    // if (isset($_SESSION['cart'])) {
-    //     echo '<pre>';
-    //     print_r($_SESSION['cart']); // Print the cart for debugging
-    //     echo '<pre>';
-    // } else {
-    //     echo "Error: Can't add product.";
-    // }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,11 +30,16 @@
             <?php include("../component/connect/config.php"); ?>
             <div class="cart-container">
                 <!-- TOP CART -->
+                <?php 
+                if (isset($_SESSION['cart'])) {
+                    $i=0;
+                    foreach($_SESSION['cart'] as $cart_item) { $i++; }
+                ?>
                 <div class="top-cart">
                     <h3>GIỎ HÀNG</h3>
-                    <!-- <span>(12 sản phẩm )</span> -->
+                    <span>(<?=$i?> sản phẩm )</span>
                 </div>
-                    
+                <?php } ?>   
                 <!-- MAIN CART -->
                 <div class="main-cart">
                     <div class="maincartproduct">
@@ -64,22 +59,20 @@
                                     <tbody>
                                         <?php 
                                             if (isset($_SESSION['cart'])) {
-                                                $i = 0;
                                                 $totalprice=0;
                                                 foreach($_SESSION['cart'] as $cart_item) {
                                                     $total = $cart_item['price']*$cart_item['quantity'];
                                                     $totalprice += $total;
-                                                    $i++;
                                         ?>
                                             <tr style="position: relative;">
-                                                <td class="maincart_product_img" style="width: 20%"><img src="../../project/admin/module/product/uploads/<?php echo $cart_item['img']?>" 
+                                                <td class="maincart_product_img" style="width: 20%"><img src="../admin/module/product/uploads/<?php echo $cart_item['img']?>" 
                                                 width="100px" style="display: block; margin-left: auto; margin-right: auto;"></td>
                                                 <td style="width: 20%"><?php echo $cart_item['nameProduct']?></td>
                                                 <td class="price" style="width: 20%"><?php echo number_format($cart_item['price'], 0, ',', '.');?>₫</td>
-                                                <td class="quantity-product" style="display: block; margin-left: auto; margin-right: auto; position:absolute; top: 32px; width: 20%">
-                                                    <input class="decrement" onclick="changeQuantity(this,-1)" type="button" value="-">
-                                                    <?php echo $cart_item['quantity']?>
-                                                    <input class="increment" onclick="changeQuantity(this,1)" type="button" value="+">
+                                                <td class="quantity-product">
+                                                    <a href="../../project/page/addToCart.php?minus=<?=$cart_item['id']?>"><i class="fa-regular fa-square-minus"></i></a>
+                                                    <?=$cart_item['quantity']?>
+                                                    <a href="../../project/page/addToCart.php?plus=<?=$cart_item['id']?>"><i class="fa-regular fa-square-plus"></i></a>
                                                 </td>
                                                 <td class="price"><?php echo number_format($total, 0, ',', '.') ?>₫</td>
                                                 <td class="maincart_product_remove"> 
@@ -94,14 +87,22 @@
                                                         <p><b>Thành tiền:</b></p> 
                                                         <span><strong id="total" style="font-size: large; font-weight:bold;"><?php echo number_format($totalprice, 0, ',', '.') ?>₫</strong></span>
                                                     </div>
-                                                    <button>THANH TOÁN</button>
-                                                    <button>CHỌN THÊM</button>
-                                                    <button><a href="../../project/page/addToCart.php?deleteAll=1" style="color: #fff">XÓA TẤT CẢ</a></button>
+                                                    <button><a href="../../project/page/checkout.php" style="color: #fff">THANH TOÁN</a></button>
+                                                    <button><a href="../../project/page/product/index_product.php" style="color: #fff">CHỌN THÊM</a></button>
+                                                    <button>
+                                                        <a href="../../project/page/addToCart.php?deleteAll=1" style="color: #fff">
+                                                            <i class="fa-solid fa-trash-can"></i>XÓA TẤT CẢ
+                                                        </a>
+                                                    </button>
                                                 </td>
                                             </tr>
                                         <?php   } else { ?>
-                                            <tr>
-                                                <td colspan="6" style="font-size: 30px; padding-top: 30px; color: #000;">Hiện tại giỏ hàng đang trống!</td>
+                                            <tr class="empityCart">
+                                                <td colspan="6" style="font-size: 30px; padding-top: 50px; color: pink;">
+                                                    Hiện tại giỏ hàng đang trống! <br>
+                                                    <button><a href="../../project/page/product/index_product.php" style="color: #fff">CHỌN THÊM</a></button>
+                                                </td>
+                                                
                                             </tr>
                                         <?php } ?>
                                     </tbody>
