@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="product-showcase">
+    <form class="product-showcase" action="index_product.php?page=filter">
         <h2 class="title">Lọc sản phẩm</h2>
 
         <div class="showcase-wrapper">
@@ -11,7 +11,7 @@
                     $query_type = $conn->query($sql_type);
                     while ($row_type = $query_type->fetch(PDO::FETCH_ASSOC)) {                      
                 ?>
-                <label><input type="checkbox" class="loai" value="1"><?php echo $row_type['nameType'] ?></label>
+                <label><input type="checkbox" class="loai" name="loai" value="<?php echo $row_type['idType']; ?>"><?php echo $row_type['nameType'] ?></label>
                 <?php } ?>
             </div>
         </div>
@@ -28,5 +28,6 @@
         </div>
 
         <button>Lọc</button>
-    </div>
+        <!-- <input type="hidden" name="filter" value="1"> -->
+    </form>
 </div>

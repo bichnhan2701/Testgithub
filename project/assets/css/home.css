@@ -216,6 +216,21 @@ main .sidebar-container .banner-sidebar img {
     transform: scale(1.1);
 }
 
+.showcase-badge {
+    position: absolute;
+    top: 4px;
+    left: -33px;
+    transform: rotate(-45deg);
+    text-transform: uppercase;
+    background: #F6E96B;
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
+    padding: 3px 25px;
+    border-radius: 3px;
+    z-index: 3;
+}
+
 .product-featured .showcase-content {
     padding: 20px 5px;
     width: 70%;

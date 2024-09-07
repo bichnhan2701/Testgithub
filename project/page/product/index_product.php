@@ -31,14 +31,14 @@
                 <?php 
                     include("../../../project/component/connect/config.php"); 
                     $temp = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : '';
-                    if (isset($_GET['page'])) {
-                        $temp = htmlspecialchars($_GET['page']);
-                    }
+                    
                 ?>
                 <div class="main-container">
                     <?php 
                         if ($temp == 'search'){
                             require_once("searchProduct.php");
+                        } else if ($temp == 'filter') {
+                            require_once("filterProduct.php");
                         } else {
                             require_once("main.php"); 
                         }  

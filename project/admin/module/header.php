@@ -1,6 +1,9 @@
 <?php 
-session_start(); // Start session at the beginning
-
+session_start(); 
+if (!isset($_SESSION['login'])) {
+    header('Location: ../../../project/admin/model/login.php');  
+    exit();  
+}
 if (isset($_GET['page']) && $_GET['page'] == 'dangxuat') {
     unset($_SESSION['login']);
     header('Location:../../../project/admin/model/login.php');

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     include("../../project/component/connect/config.php");
 ?>
 <!DOCTYPE html>
@@ -66,7 +66,7 @@
                                         ?>
                                             <tr style="position: relative;">
                                                 <td class="maincart_product_img" style="width: 20%"><img src="../admin/module/product/uploads/<?php echo $cart_item['img']?>" 
-                                                width="100px" style="display: block; margin-left: auto; margin-right: auto;"></td>
+                                                width="100px" height="100px" style="display: block; margin-left: auto; margin-right: auto;"></td>
                                                 <td style="width: 20%"><?php echo $cart_item['nameProduct']?></td>
                                                 <td class="price" style="width: 20%"><?php echo number_format($cart_item['price'], 0, ',', '.');?>₫</td>
                                                 <td class="quantity-product">
@@ -87,7 +87,7 @@
                                                         <p><b>Thành tiền:</b></p> 
                                                         <span><strong id="total" style="font-size: large; font-weight:bold;"><?php echo number_format($totalprice, 0, ',', '.') ?>₫</strong></span>
                                                     </div>
-                                                    <button><a href="../../project/page/checkout.php" style="color: #fff">THANH TOÁN</a></button>
+                                                    <button><a href="#" style="color: #fff">ĐẶT HÀNG</a></button>
                                                     <button><a href="../../project/page/product/index_product.php" style="color: #fff">CHỌN THÊM</a></button>
                                                     <button>
                                                         <a href="../../project/page/addToCart.php?deleteAll=1" style="color: #fff">

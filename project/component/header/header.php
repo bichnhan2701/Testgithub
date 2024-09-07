@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,40 +26,46 @@
         </div>
 
         <div class="header-user-actions">
-            <div class="user-out">
-                <button class="login" onclick="handleLogin()">
-                    <i class="fa-solid fa-right-to-bracket"></i> <span>Đăng nhập</span>
-                </button>
-                <div id="handleLogin" style="display: none; position:fixed; left:0 ;z-index: 30"> 
-                    <?php include($_SERVER['DOCUMENT_ROOT'] . "/project/model/login/login.php"); ?>
+            <?php if (isset($_SESSION['login'])): ?>
+                <!-- User is logged in -->
+                <div class="user-in">
+                    <button class="cart-btn">
+                        <a href="../../../project/page/cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <span class="count">0</span>
+                    </button>
+                    <button class="user">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Xin chào, <?php echo htmlspecialchars($_SESSION['login']); ?>!</span> <!-- Display Username -->
+                    </button>
+                    <button class="logout">
+                        <a href="../../../project/model/logout.php">
+                            <i class="fa-solid fa-right-from-bracket"></i> <span>Đăng xuất</span>
+                        </a>
+                    </button>
                 </div>
+            <?php else: ?>
+                <!-- User is not logged in -->
+                <div class="user-out">
+                    <button class="login" onclick="handleLogin()">
+                        <i class="fa-solid fa-right-to-bracket"></i> <span>Đăng nhập</span>
+                    </button>
+                    <div id="handleLogin" style="display: none; position:fixed; left:0 ;z-index: 30"> 
+                        <?php include($_SERVER['DOCUMENT_ROOT'] . "/project/model/login/login.php"); ?>
+                    </div>
 
-                <button class="register" onclick="handleRegister()">
-                    <i class="fa-solid fa-user-plus"></i> <span>Đăng ký</span>
-                </button>
-                <div id="handleRegister" style="display: none; position:fixed ; left:0;z-index: 30">
-                    <?php include($_SERVER['DOCUMENT_ROOT'] . "/project/model/register/register.php"); ?>
+                    <button class="register" onclick="handleRegister()">
+                        <i class="fa-solid fa-user-plus"></i> <span>Đăng ký</span>
+                    </button>
+                    <div id="handleRegister" style="display: none; position:fixed ; left:0;z-index: 30">
+                        <?php include($_SERVER['DOCUMENT_ROOT'] . "/project/model/register/register.php"); ?>
+                    </div>
+                    
+                    <button class="user">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Bạn chưa đăng nhập</span>
+                    </button>
                 </div>
-
-                <button class="user" onclick="handleLogin()">
-                    <i class="fa-solid fa-circle-user"></i>
-                    <span>Bạn chưa đăng nhập</span>
-                </button>
-            </div>
-
-            <div class="user-in">
-                <button class="cart-btn">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="count">0</span>
-                </button>
-                <button class="user">
-                    <i class="fa-solid fa-circle-user"></i>
-                    <span>Xin chào Bích Nhân</span>
-                </button>
-                <button class="logout">
-                    <i class="fa-solid fa-right-from-bracket"></i> <span>Đăng xuất</span>
-                </button>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
     <script src="../../../project/assets/js/main.js"></script>

@@ -1,3 +1,4 @@
+
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
@@ -12,7 +13,9 @@
     bottom: 0;
     z-index: 1000;
     top: 0;
-    font-size: 20px;
+    left: 0;
+    right: 0;
+    font-size: 18px;
 }
 
 .register-container {

@@ -15,9 +15,7 @@
 <body>
     <div class="wrapper">
         <header>
-            <?php 
-                include ("component/header/header.php");
-            ?>
+            <?php  include ("component/header/header.php"); ?>
         </header>
 
         <div class="menu">

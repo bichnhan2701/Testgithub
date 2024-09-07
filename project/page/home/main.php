@@ -10,6 +10,7 @@
                                             <img src="../project/assets/images/general/home-deal1.webp" class="showcase-img default">
                                             <img src="../project/assets/images/general/home-deal1-hover.png" class="showcase-img hover">
                                         </a>
+                                        <!-- <p class="showcase-badge">18%</p> -->
                                     </div>
 
                                     <div class="showcase-content">
@@ -32,8 +33,8 @@
                                         </p>
 
                                         <div class="price-box">
-                                            <p class="price">$150.00</p>
-                                            <del>$200.00</del>
+                                            <p class="price">644.520₫</p>
+                                            <del>786.000₫</del>
                                         </div>
 
                                         <button class="add-cart-btn">
@@ -51,6 +52,7 @@
                                             <img src="../project/assets/images/general/home-deal2.webp" class="showcase-img default">
                                             <img src="../project/assets/images/general/home-deal2-hover.png" class="showcase-img hover">
                                         </a>
+                                        <!-- <p class="showcase-badge">34%</p> -->
                                     </div>
                                 
                                     <div class="showcase-content">
@@ -73,8 +75,8 @@
                                         </p>
 
                                         <div class="price-box">
-                                            <p class="price">$150.00</p>
-                                            <del>$200.00</del>
+                                            <p class="price">255.000₫</p>
+                                            <del>384.800₫</del>
                                         </div>
 
                                         <button class="add-cart-btn">

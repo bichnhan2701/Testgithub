@@ -1,7 +1,6 @@
 <?php 
 session_start();
-include("../../component/connect/config.php");
-
+require_once("../../../project/component/connect/config.php");
 if (isset($_POST['login'])) {
     $taikhoan = trim($_POST['username']);
     $matkhau = trim($_POST['password']);
@@ -49,10 +48,6 @@ if (isset($_POST['login'])) {
                     <div class="logo"> 
                         <img src="../../../project/assets/images/general/logo1.png" alt="Logo">
                     </div>
-                    <!-- <p>
-                        Bạn chưa phải là thành viên quản lý? 
-                        <a href="../../../project/admin/model/register.php">Đăng kí</a>
-                    </p> -->
                     <p>
                         Bạn là khách hàng? 
                         <a href="../../../project/index.php">Đến trang chủ</a>
