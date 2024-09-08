@@ -38,9 +38,12 @@
                                 </button>
                             </form>
                             
-                            <button class="buy-btn">
-                                <a href="#">Mua</a>
-                            </button>
+                            <form action="../handle_buyNow.php?id=<?php echo $product['idProduct'] ?>" method="POST">
+                                <input type="hidden" name="buyNow" value="1">
+                                <button class="buy-btn" style="color: #333">
+                                    <i>Mua</i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <div class="showcase-content">

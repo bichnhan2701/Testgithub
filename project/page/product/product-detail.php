@@ -115,8 +115,12 @@
                                             </div>
                                             
                                             <div class="showcase-btn">
+                                                <!-- <input class="add-cart-btn" type="submit" name="addToCart" value="Thêm vào giỏ hàng">
+                                                <input class="add-cart-btn" type="submit" name="buyNow" value="Mua ngay"> -->
+                                                <!-- Add to Cart Button -->
                                                 <input class="add-cart-btn" type="submit" name="addToCart" value="Thêm vào giỏ hàng">
-                                                <input class="add-cart-btn" type="submit" name="" value="Mua ngay">
+                                                <!-- Buy Now Button -->
+                                                <input class="add-cart-btn" type="submit" name="buyNow" value="Mua ngay" formaction="../handle_buyNow.php?id=<?php echo $product['idProduct'] ?>">
                                             </div>
                                         </div>
                                     </form>
@@ -124,7 +128,90 @@
                             </div>
                         </div>
                         <!-- PRODUCT INFORMATION -->
+                        <div class="inf-container">
+                            <h2 class="title">Thông tin sản phẩm</h2>
                         
+                            <nav id="navbar-inf">
+                                <ul class="navbar-list">
+                                    <li class="navbar-item">
+                                        <a href="#motasanpham">Mô tả sản phẩm</a>
+                                    </li>
+                                    <li class="navbar-item">
+                                        <a href="#bangmau">Bảng màu</a>
+                                    </li>
+                                    <li class="navbar-item">
+                                        <a href="#thanhphan">Thành phần</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <div class="layout-inf" id="motasanpham">
+                                <div class="inf-title"> Mô tả sản phẩm </div>
+                                <div class="inf-content">
+                                    <p>
+                                        <?=$product['descDetail']?>
+                                    </p>
+                                    <p><img src="../../admin/module/product_detail/uploads/<?=$product['img_inf']?>" 
+                                        style="width: 55%"></p>
+                                </div>
+                            </div>
+
+                            <div class="layout-inf" id="bangmau">
+                                <div class="inf-title"> Bảng màu </div>
+                                <p>
+                                    <span>
+                                        <?=$product['descColorTable']?>
+                                    </span>
+                                    <br>
+                                    <img src="../../admin/module/product_detail/uploads/<?=$product['img_colorTable']?>" style="width: 30%">
+                                    <span>
+                                        Hello
+                                    </span>
+                                </p>
+                                <div class="inf-content-container">
+                                    <p class="inf-content">
+                                        <span>
+                                            <br>
+                                            <?=$product['descColor1']?>
+                                        </span>
+                                        <img src="../../admin/module/product_detail/uploads/<?=$product['img_hover_color1']?>" style="width: 30%">
+                                    </p>
+                                    <p class="inf-content">
+                                        <img src="../../admin/module/product_detail/uploads/<?=$product['img_hover_color2']?>" style="width: 30%">
+                                        <span>
+                                            <br>
+                                            <?=$product['descColor2']?>
+                                        </span>
+                                    </p>
+                                    <p class="inf-content">
+                                        <span>
+                                            <br>
+                                            <?=$product['descColor3']?>
+                                        </span>
+                                        <img src="../../admin/module/product_detail/uploads/<?=$product['img_hover_color3']?>" style="width: 30%">
+                                    </p>
+                                    <p class="inf-content">
+                                        <img src="../../admin/module/product_detail/uploads/<?=$product['img_hover_color4']?>" style="width: 30%">
+                                        <span>
+                                            <br>
+                                            <?=$product['descColor4']?>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="layout-inf" id="thanhphan">
+                                <div class="inf-title"> Thành phần </div>
+                                <div class="inf-content">
+                                    <p>
+                                        <?=$product['ingredient']?>
+                                    </p>
+                                    <p>
+                                        <img src="../../admin/module/product_detail/uploads/<?=$product['img_ingredient']?>" style="width: 60%">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

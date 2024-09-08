@@ -104,8 +104,6 @@
             echo "Error: Product not found in the database.";
         }
 
-        // Redirect to cart page after 2 seconds for debugging
-        // header('Refresh: 2; URL=../../project/page/cart.php');
         header('Location: ../../project/page/cart.php');
         exit(); // Ensure no further processing is done
     }

@@ -31,7 +31,6 @@
                 <?php 
                     include("../../../project/component/connect/config.php"); 
                     $temp = isset($_GET['page']) ? htmlspecialchars($_GET['page']) : '';
-                    
                 ?>
                 <div class="main-container">
                     <?php 

@@ -1,32 +1,41 @@
 <?php
-if (isset($_GET['flter'])){
-    $loai = isset($_GET['loai']) ? array_map('intval', $_GET['loai']) : [];
-    $giaban = isset($_GET['giaban']) ? array_map('intval', $_GET['giaban']) : [];
+if (isset($_GET['page']) && $_GET['page'] == 'filter') {
+    // Đảm bảo 'loai' là một mảng và lọc ra các giá trị rỗng
+    $loai = isset($_GET['loai']) ? array_filter((array)$_GET['loai']) : [];
     
-    // Construct the SQL query based on filters
-    $sql = "SELECT * FROM sanpham WHERE 1=1";
+    // Đảm bảo 'giaban' là một mảng và lọc ra các giá trị rỗng
+    $giaban = isset($_GET['giaban']) ? array_filter((array)$_GET['giaban']) : [];
     
-    // Filter by product type
+    // Tạo câu lệnh SQL dựa trên bộ lọc
+    $sql = "SELECT sanpham.*, loaisanpham.nameType FROM sanpham 
+            JOIN loaisanpham ON sanpham.idType = loaisanpham.idType 
+            WHERE 1=1";
+    
+    // Lọc theo loại sản phẩm
     if (!empty($loai)) {
-        $loai_str = implode(',', array_map('intval', $loai)); // Convert to string with commas
-        $sql .= " AND idType IN ($loai_str)";
+        // Chuyển đổi thành chuỗi với các giá trị được bao quanh bởi dấu ngoặc đơn
+        $loai_str = implode("','", array_map(function($item) {
+            return addslashes($item); 
+        }, $loai));
+        $sql .= " AND loaisanpham.idType IN ('$loai_str')";
     }
-    // Filter by price range
+    
+    // Lọc theo khoảng giá
     if (!empty($giaban)) {
         $price_conditions = [];
         foreach ($giaban as $price_option) {
             switch ($price_option) {
-                case '1':
-                    $price_conditions[] = "price < 200000";
+                case 1:
+                    $price_conditions[] = "sanpham.price < 200000";
                     break;
-                case '2':
-                    $price_conditions[] = "price >= 200000 AND price <= 300000";
+                case 2:
+                    $price_conditions[] = "sanpham.price >= 200000 AND sanpham.price <= 300000";
                     break;
-                case '3':
-                    $price_conditions[] = "price >= 300000 AND price <= 400000";
+                case 3:
+                    $price_conditions[] = "sanpham.price >= 300000 AND sanpham.price <= 400000";
                     break;
-                case '4':
-                    $price_conditions[] = "price > 400000";
+                case 4:
+                    $price_conditions[] = "sanpham.price > 400000";
                     break;
             }
         }
@@ -35,11 +44,16 @@ if (isset($_GET['flter'])){
         }
     }
     
-    $query = $conn->query($sql);
-    $kq = $query->fetchAll(PDO::FETCH_ASSOC);
-    
-    // Pass the filtered products to filterProduct.php
-    // include 'filterProduct.php';
+    // Thực thi truy vấn
+    try {
+        $query = $conn->query($sql);
+        $kq = $query->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage(); // Hiển thị thông báo lỗi
+        $kq = [];
+    }
+} else {
+    $kq = []; // Hoặc lấy tất cả sản phẩm nếu không có bộ lọc
 }
 ?>
 <!-- PRODUCT -->

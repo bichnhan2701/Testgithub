@@ -7,9 +7,9 @@
                             <p class="banner-subtitle">Trending item</p>
                             <h2 class="banner-title">3CE Blur Matte Lipstick</h2>
                             <p class="banner-text">
-                                Chỉ từ <b>299</b>.000
+                                Chỉ từ <b>299</b>.000₫
                             </p>
-                            <a href="../project/page/checkout.php" class="banner-btn">Mua ngay</a>
+                            <a href="../../../project/page/product/product-detail.php?id=thoi-lip1" class="banner-btn">Khám phá ngay</a>
                         </div>
                     </div>
 
@@ -24,9 +24,9 @@
                             <p class="banner-subtitle">Sale Offer</p>
                             <h2 class="banner-title">3CE Velvet Lip Tint</h2>
                             <p class="banner-text">
-                                Chỉ từ  <b>299</b>.000
+                                Chỉ từ  <b>299</b>.000₫
                             </p>
-                            <a href="../project/page/checkout.php" class="banner-btn">Mua ngay</a>
+                            <a href="../../../project/page/product/product-detail.php?id=tint-lip4" class="banner-btn">Khám phá ngay</a>
                         </div>
                     </div>
                 </div>

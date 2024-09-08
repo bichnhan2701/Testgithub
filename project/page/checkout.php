@@ -1,3 +1,12 @@
+<?php
+session_start();
+include("../../project/component/connect/config.php");
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+if (empty($cart)) {
+    echo "Your cart is empty.";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +28,7 @@
         </header>
 
         <div class="menu">
-            <?php include("../component/connect/config.php"); ?>
-            <?php include "../component/menu/menu.php" ?>
+            <?php include("../component/menu/menu.php") ?>
         </div>
 
         <main>
@@ -32,15 +40,15 @@
                             <input type="email" id="email" placeholder="Email (tùy chọn)">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Họ và tên">
+                            <input type="text" id="name" placeholder="Họ và tên" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="phone" placeholder="Số điện thoại">
+                            <input type="text" id="phone" placeholder="Số điện thoại" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="address" placeholder="Địa chỉ">
+                            <input type="text" id="address" placeholder="Địa chỉ cụ thể" required> 
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <select id="province">
                                 <option value="">Tỉnh thành</option>
                             </select>
@@ -58,7 +66,7 @@
                         <div class="form-group">
                             <input type="checkbox" id="other-address">
                             <label for="other-address">Giao hàng đến địa chỉ khác</label>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <textarea id="note" placeholder="Ghi chú (tùy chọn)"></textarea>
                         </div>
@@ -96,52 +104,36 @@
 
                 <div class="right-panel">
                     <div class="order-summary">
-                        <h3>Đơn hàng (3 sản phẩm)</h3>
+                        <h3>Đơn hàng (<?php echo count($cart); ?> sản phẩm)</h3>
                         <div class="maincart_product">
-                            <div class="maincart_product_item">
-                                <div class="maincart_product_img">
-                                    <img src="../assets/images/products/sonduong/duong1/duong-lip1-color-1-0.png" alt="3CE Shine Reflector">
+                            <?php foreach ($cart as $product) { ?>
+                                <div class="maincart_product_item">
+                                    <div class="maincart_product_img">
+                                        <img src="../admin/module/product/uploads/<?php echo $product['img']; ?>" width="70px" height="70px">
+                                    </div>
+                                    <div class="maincart_product_details">
+                                        <a href="#"><?php echo $product['nameProduct']; ?></a>
+                                        <span class="price" data-price="<?php echo $product['price']; ?>"><?php echo number_format($product['price'], 0, ',', '.'); ?>₫</span>
+                                        <span class="quantity">x<?php echo $product['quantity']; ?></span>
+                                    </div>   
                                 </div>
-                                <div class="maincart_product_details">
-                                    <a href="#">3CE Shine Reflector</a>
-                                    <span class="price" data-price="9000000">₫9.000.000</span>
-                                    <span class="quantity">x1</span>
-                                </div>   
-                            </div>
-                
-                            <div class="maincart_product_item">
-                                <div class="maincart_product_img">
-                                    <img src="../assets/images/products/sonduong/duong1/duong-lip1-color-2-0.png" alt="3CE Shine Reflector">
-                                </div>
-                                <div class="maincart_product_details">
-                                    <a href="#">3CE Shine Reflector</a>
-                                    <span class="price" data-price="9000000">₫9.000.000</span>
-                                    <span class="quantity">x1</span>
-                                </div>
-                                
-                            </div>
-                
-                            <div class="maincart_product_item">
-                                <div class="maincart_product_img">
-                                    <img src="../assets/images/products/sonduong/duong1/duong-lip1-color-4-0.png" alt="3CE Shine Reflector">
-                                </div>
-                                <div class="maincart_product_details">
-                                    <a href="#">3CE Shine Reflector</a>
-                                    <span class="price" data-price="9000000">₫9.000.000</span>
-                                    <span class="quantity">x1</span>
-                                </div>
-                                
-                            </div>
-                
+                            <?php } ?>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <input type="text" id="coupon" placeholder="Nhập mã giảm giá">
                             <button class="apply-button">Áp dụng</button>
-                        </div>
+                        </div> -->
                         <div class="total">
-                            <p>Tạm tính: 27,000,000đ</p>
-                            <p>Phí vận chuyển: -</p>
-                            <h4>Tổng cộng: 27,000,000đ</h4>
+                            <?php 
+                                $total = array_reduce($cart, function($carry, $product) {
+                                    return $carry + ($product['price'] * $product['quantity']);
+                                }, 0);
+                                $shippingFee = 70000;
+                                $totalprice = $total + $shippingFee;
+                            ?>
+                            <p>Tạm tính: <?= number_format($total, 0, ',', '.'); ?>đ</p>
+                            <p>Phí vận chuyển: <?= number_format($shippingFee, 0, ',', '.'); ?>₫</p>
+                            <h4>Tổng cộng: <?= number_format($totalprice, 0, ',', '.'); ?>đ</h4>
                         </div>
                     </div>
                     <button class="order-button">Đặt hàng</button>

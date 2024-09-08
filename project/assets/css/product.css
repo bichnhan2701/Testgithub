@@ -428,7 +428,7 @@ main .sidebar-container {
   height: 40px;
 }
 
-.product-grid .buy-btn a {
+.product-grid .buy-btn i {
   color: var(--item1);
   text-transform: uppercase;
   font-size: 10px;
@@ -440,6 +440,6 @@ main .sidebar-container {
   border-color: var(--item);
 }
 
-.product-grid .buy-btn:hover a {
+.product-grid .buy-btn:hover i {
   color: #fff;
 }
