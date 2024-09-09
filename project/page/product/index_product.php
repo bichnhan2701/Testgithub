@@ -1,3 +1,6 @@
+<?php
+define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . '/project/');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

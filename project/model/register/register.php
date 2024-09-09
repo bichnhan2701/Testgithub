@@ -1,3 +1,45 @@
+<?php
+session_start();
+require_once("/xampp/htdocs/3CEWEB/project/component/connect/config.php");
+
+if (isset($_POST['register'])) {
+    $username = trim($_POST['user']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['number']);
+    $address = trim($_POST['address']);
+    $password = trim($_POST['password']);
+    $repassword = trim($_POST['repassword']);
+    
+    if ($password !== $repassword) {
+        $_SESSION['message'] = "Mật khẩu nhập lại không khớp.";
+        header('Location: ../../../project/model/register/register.php');
+        exit();
+    }
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT); 
+    $stmt = $conn->prepare("INSERT INTO taikhoan(user_name, email, user_number, user_address, pass) 
+                VALUES (:username, :email, :phone, :address, :password)");
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':phone', $phone);
+    $stmt->bindParam(':address', $address);
+    $stmt->bindParam(':password', $hashedPassword); 
+
+    if ($stmt->execute()) {
+        $_SESSION['message'] = "Bạn đã đăng ký thành công!";
+        $_SESSION['login'] = $username; 
+    } else {
+        echo '<script type="text/javascript">
+            window.onload = function () { alert("Đăng ký không thành công"); }
+        </script>';
+        header('Location: ../../../project/model/register/register.php');
+        exit(); 
+    }
+    echo '<script type="text/javascript">
+            window.onload = function () { alert("Đăng ký thành công"); }
+        </script>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +47,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 
-    <!-- css link -->
     <link rel="stylesheet" href="../../../project/model/register/register.css">
     <link rel="stylesheet" href="../../../project/assets/css/font-icons/fontawesome-free-6.6.0-web/css/all.css">
     
-    <!-- js link -->
     <script src="../../../project/assets/js/main.js"></script>
 </head>
 <body>
@@ -19,7 +59,6 @@
                 <div onclick="closeHandle()" class="close-button">
                     <i class="fa-solid fa-xmark"></i>
                 </div>
-                
                 <div class="welcome-section">
                     <h1>Chào mừng bạn!</h1>
                     <div class="logo">
@@ -54,8 +93,7 @@
                     </div>
 
                     <div class="sub">
-                        <button type="submit">Đăng kí</button>
-                        <input type="hidden" name="register" value="1">
+                        <button type="submit" name="register">Đăng kí</button>
                     </div>
                     <div class="social-register">
                         <p>Hoặc đăng kí với</p>

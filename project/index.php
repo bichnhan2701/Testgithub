@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3CE Lipsticks</title>
 
-    <!-- css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/home.css">
 
-    <!-- icon -->
     <link rel="stylesheet" href="assets/css/font-icons/fontawesome-free-6.6.0-web/css/all.css">
 </head>
 <body>
     <div class="wrapper">
+        <?php include("../project/component/connect/config.php"); ?>
         <header>
             <?php  include ("component/header/header.php"); ?>
         </header>
 
         <div class="menu">
-            <?php include("../project/component/connect/config.php"); ?>
             <?php include "component/menu/menu.php" ?>
         </div>
 

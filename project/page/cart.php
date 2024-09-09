@@ -1,6 +1,7 @@
 <?php
-    session_start();
+    // session_start();
     include("../../project/component/connect/config.php");
+    // define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . '/project/');
 ?>
 <!DOCTYPE html>
 <html lang="en">

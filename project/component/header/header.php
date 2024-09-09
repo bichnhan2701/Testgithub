@@ -1,6 +1,6 @@
-<?php 
-// session_start(); 
-?>
+<?php
+    session_start();
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="header-user-actions">
-            <?php if (isset($_SESSION['login'])): ?>
+            <?php if (isset($_SESSION['user_login'])): ?>
                 <!-- User is logged in -->
                 <div class="user-in">
                     <button class="cart-btn">
@@ -37,7 +37,7 @@
                     </button>
                     <button class="user">
                         <i class="fa-solid fa-circle-user"></i>
-                        <span>Xin chào, <?php echo htmlspecialchars($_SESSION['login']); ?>!</span> <!-- Display Username -->
+                        <span>Xin chào, <?php echo htmlspecialchars($_SESSION['user_login']); ?>!</span> <!-- Display Username -->
                     </button>
                     <button class="logout">
                         <a href="../../../project/model/logout.php">

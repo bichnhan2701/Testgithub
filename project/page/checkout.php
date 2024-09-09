@@ -1,5 +1,6 @@
 <?php
 session_start();
+// session_destroy();
 include("../../project/component/connect/config.php");
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 if (empty($cart)) {

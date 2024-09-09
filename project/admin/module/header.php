@@ -1,11 +1,11 @@
 <?php 
 session_start(); 
-if (!isset($_SESSION['login'])) {
-    header('Location: ../../../project/admin/model/login.php');  
-    exit();  
-}
+// if (!isset($_SESSION['login'])) {
+//     header('Location: ../../../project/admin/model/login.php');  
+//     exit();  
+// }
 if (isset($_GET['page']) && $_GET['page'] == 'dangxuat') {
-    unset($_SESSION['login']);
+    unset($_SESSION['user_login']);
     header('Location:../../../project/admin/model/login.php');
     exit();
 }
@@ -20,11 +20,11 @@ if (isset($_GET['page']) && $_GET['page'] == 'dangxuat') {
         </div>
         <h3>Welcome </h3>
         <button class="user">
-            <?php if (isset($_SESSION['login'])) { 
-                $admin = $_SESSION['login']; // Get admin name from session
+            <?php if (isset($_SESSION['user_login'])) { 
+                $admin = $_SESSION['user_login']; 
             ?>
                 <i class="fa-solid fa-user"></i>
-                <?php echo htmlspecialchars($admin); // Display admin name safely ?>
+                <?php echo htmlspecialchars($admin); ?>
             <?php } ?>
         </button>
         <button class="logout">

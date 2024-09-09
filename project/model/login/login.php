@@ -1,3 +1,39 @@
+<?php 
+session_start();
+if (isset($_POST['loginUser'])) {
+    $name = $_POST['name'];
+    $password = $_POST['password'];
+    // Sử dụng PDO để truy vấn
+    $stmt = $conn->prepare("SELECT * FROM tk_admin WHERE admin_name = :name");
+    $stmt->bindParam(':name', $name);
+    $stmt->execute();
+    $result_admin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $stmt = $conn->prepare("SELECT * FROM taikhoan WHERE user_name = :name");
+    $stmt->bindParam(':name', $name);
+    $stmt->execute();
+    $result_taikhoan = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($result_admin) {
+        if ($password == $result_admin['pass']) {
+            $_SESSION['user_login'] = $result_admin['admin_name'];
+            header("Location: ../../project/admin/index.php");
+            exit();
+        } else {
+            echo "Mật khẩu không chính xác!";
+        }
+    } 
+    if ($result_taikhoan) {
+        if (password_verify($password, $result_taikhoan['pass'])) {
+            $_SESSION['user_login'] = $result_taikhoan['user_name'];
+            header("Location: ../../project/index.php");
+            exit();
+        } else {
+            echo "Mật khẩu không chính xác!";
+        }   
+    } 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,17 +65,15 @@
                         <button onclick="handleRegister()"> Đăng kí </button>
                     </p>
                 </div>
-
+                
                 <div class="login-section">
                     <h2>Đăng nhập</h2>
                     <div class="login">
-                        <label for="user_input">Email hoặc Tên hoặc Điện thoại</label>
-                        <input type="text" id="user_input" name="user_input" required>
-                        <span id="error-user-input" style="color:red;"></span>
-
+                        <label for="name">Tên người dùng</label>
+                        <input type="text" id="name" name="name" required>
                         <label for="password">Mật khẩu</label>
-                        <input type="password" id="password" name="pass" required>
-                        <span id="error-password" style="color:red;"></span>
+                        <input type="password" id="password" name="password" required>
+                        <a href="#" class="forgot-password"> Quên mật khẩu?</a>
                     </div>
 
                     <div class="keep-logged-in">
@@ -48,8 +82,7 @@
                     </div>
 
                     <div class="sub">
-                        <button type="submit">Đăng nhập</button>
-                        <input type="hidden" name="login" value="1">
+                        <button type="submit" name="loginUser">Đăng nhập</button>
                     </div>
 
                     <div class="social-login">
