@@ -107,31 +107,31 @@
                 <div class="container">
                     <ul id="list-products">
                         <div class="item">
-                            <img src="../assets/images/products/sonthoi/thoi1/thoi-lip1-inf.png">
+                            <img src="../assets/images/general/thoi-intro.png">
                             <div class="name">Son thỏi</div>
                             <p>Đậm màu, bền lâu và không bóng. Lý tưởng cho những ai yêu thích vẻ đẹp cổ điển và quyến rũ</p>
                         </div>
 
                         <div class="item">
-                            <img src="../assets/images/products/sonkem/kem1/kem-lip1-inf.png">
+                            <img src="../assets/images/general/kem-intro.png">
                             <div class="name">Son kem</div>
                             <p>Mềm mượt, dễ tán đều và mang lại cảm giác thoải mái cho môi. Thích hợp cho mọi dịp và phong cách</p>
                         </div>
 
                         <div class="item">
-                            <img src="../assets/images/products/sonkem/kem1/kem-lip1-color-1-0.png">
+                            <img src="../assets/images/general/tint-intro.png">
                             <div class="name"> Son nước</div>
                             <p>Kết cấu lỏng, khô nhanh và bền màu. Phù hợp với những ai muốn có một lớp son mịn màng và lâu trôi</p>
                         </div>
 
                         <div class="item">
-                            <img src="../assets/images/products/sonduong/duong1/duong-lip1-inf.png">
+                            <img src="../assets/images/general/duong-intro.png">
                             <div class="name">Son dưỡng</div>
                             <p>Dưỡng ẩm, giúp môi mềm mại và tránh khô nứt. Có thể sử dụng riêng hoặc làm lớp lót trước khi thoa son màu</p>
                         </div>
 
                         <div class="item">
-                            <img src="../assets/images/products/sonbong/bong1/bong-lip1-poster1.png">
+                            <img src="../assets/images/general/bong-intro.png">
                             <div class="name">Son bóng</div>
                             <p>Tạo độ bóng, dưỡng ẩm và làm đầy đặn môi. Hoàn hảo để thêm sự tươi mới và trẻ trung cho đôi môi</p>
                         </div>

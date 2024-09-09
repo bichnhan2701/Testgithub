@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/home.css">
 
+    <!-- icon -->
     <link rel="stylesheet" href="assets/css/font-icons/fontawesome-free-6.6.0-web/css/all.css">
 </head>
 <body>

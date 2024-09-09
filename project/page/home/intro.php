@@ -6,7 +6,7 @@
                             <img src="../project/assets/images/general/testimonial-1.jpg" class="testimonial-banner" width="180" height="80">
                             <p class="testimonial-name">StyleNanda</p>
                             <p class="testimonial-title">Thương hiệu sáng lập 3CE</p>
-                            <img src="../project/assets/images/icons/quotes.svg" class="quotation-img" width="26">
+                            <img src="../project/assets/images/general/quotes.svg" class="quotation-img" width="26">
                             <p class="testimonial-desc">
                                 3CE truyền cảm hứng cho phụ nữ Châu Á thể hiện chính mình, 
                                 dám sống tự do, nổi bật và khác biệt.
