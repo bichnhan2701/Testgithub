@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // session_destroy();
 include("../../project/component/connect/config.php");
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
@@ -8,6 +10,7 @@ if (empty($cart)) {
     exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -62,7 +62,7 @@ if (isset($_POST['loginUser'])) {
                     </div>
                     <p>
                         Bạn chưa phải là thành viên? 
-                        <button onclick="handleRegister()"> Đăng kí </button>
+                        <button onclick="handleRegister()" name="1"> Đăng kí </button>
                     </p>
                 </div>
                 

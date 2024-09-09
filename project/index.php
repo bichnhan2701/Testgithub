@@ -15,11 +15,11 @@
     <div class="wrapper">
         <?php include("../project/component/connect/config.php"); ?>
         <header>
-            <?php  include ("component/header/header.php"); ?>
+            <?php  include ("../project/component/header/header.php"); ?>
         </header>
 
         <div class="menu">
-            <?php include "component/menu/menu.php" ?>
+            <?php include "../project/component/menu/menu.php" ?>
         </div>
 
         <main>

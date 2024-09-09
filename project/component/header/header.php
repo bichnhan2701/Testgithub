@@ -1,5 +1,6 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();}
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="../../../project/component/header/header.css">
-    <script src="../../../project/assets/js/main.js"></script>
+    <script src="../../project/assets/js/main.js"></script>
 </head>
 <body>
     <div class="container">
